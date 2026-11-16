@@ -2,11 +2,11 @@ const { useState, useEffect, useRef } = React;
 
 export const OTPGenerator = () => {
   const [otpTimer, setOtpTimer] = useState(null)
-  const [opt, setOpt] = useState(null)
+  const [otp, setOtp] = useState(null)
   const intervalRef = useRef(null)
 
   const generateOpt = () => {
-    setOpt(Math.floor(Math.random() * 1000000))
+    setOtp(Math.floor(Math.random() * 1000000))
   }
 
   const handleClick = () => {
@@ -33,7 +33,7 @@ export const OTPGenerator = () => {
     <div className="container">
       <h1 id="otp-title">OTP Generator</h1>
       <h2 id="otp-display">{
-        opt ? opt : "Click 'Generate OTP' to get a code"
+        otp ? otp: "Click 'Generate OTP' to get a code"
       }</h2>
       <p id="otp-timer" aria-live="assertive">
         {(otpTimer === 0) 
